@@ -1,0 +1,129 @@
+﻿
+.overlay{
+
+}
+@keyframes text-flicker {
+    from,to{opacity: 1;}
+    50%{opacity: 0.625;}
+    /* 75%{opacity: 0.5;} */
+    /* 100%{opacity: 0;} */
+}
+
+@keyframes glitch {
+  0%{ }
+  50%{ }
+  }
+@keyframes scroll {
+    0%{
+        background-position: 0px 0px;}
+    50%{background-position: 0px 50px;}
+    100%{background-position: 0px 100px;}
+}
+@keyframes flickering {
+    0%{opacity: 0.557;}
+    5%{opacity: 0.483;}
+    10%{opacity: 0.752;}
+    15%{opacity: 0.5;}
+    20%{opacity: 0.5;}
+    25%{opacity: 0.5;}
+    30%{opacity: 0.5;}
+    35%{opacity: 0.5;}
+    40%{opacity: 0.5;}
+    45%{opacity: 0.5;}
+    50%{opacity: 0.5;}
+    55%{opacity: 0.5;}
+    60%{opacity: 0.5;}
+    65%{opacity: 0.5;}
+    70%{opacity: 0.5;}
+    75%{opacity: 0.5;}
+    80%{opacity: 0.5;}
+    85%{opacity: 0.5;}
+    95%{opacity: 0.5;}
+    100%{opacity: 0.5;}
+}
+@keyframes flicker{
+    0% {
+        opacity: 0.552;
+      }
+      5% {
+        opacity: 0.48287;
+      }
+      10% {
+        opacity: 0.59134;
+      }
+      15.0% {
+        opacity: 0.79543;
+      }
+      20% {
+        opacity: 0.75134;
+      }
+      25% {
+        opacity: 0.1956;
+      }
+      30.0% {
+        opacity: 0.90687;
+      }
+      35% {
+        opacity: 0.122;
+      }
+      40% {
+        opacity: 0.62254;
+      }
+      45% {
+        opacity: 0.56977;
+      }
+      50% {
+        opacity: 0.9925;
+      }
+      55.0% {
+        opacity: 0.55487;
+      }
+      60.0% {
+        opacity: 0.16607;
+      }
+      65% {
+        opacity: 0.12353;
+      }
+      70% {
+        opacity: 0.2214;
+      }
+      75% {
+        opacity: 0.67908;
+      }
+      80% {
+        opacity: 0.97163;
+      }
+      85.0% {
+        opacity: 0.1275;
+      }
+      90% {
+        opacity: 0.37186;
+      }
+      95% {
+        opacity: 0.24475;
+      }
+      100% {
+        opacity: 0.37221;
+      }
+}
+
+
+
+@keyframes caret-blink {
+    0%{
+        opacity: 0;
+    }
+    25%{opacity:1;}   
+    75%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes scan {
+    0%{bottom:100%;}
+    100%{bottom: 0%;}
+}
+
+@keyframes glow {
+}
+@keyframes blink {
+    
+}

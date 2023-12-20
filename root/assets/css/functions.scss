@@ -1,0 +1,5 @@
+@function randOpacity(){
+$rand: random(10000);
+$num: calc($rand/1000);
+@return $num;
+}

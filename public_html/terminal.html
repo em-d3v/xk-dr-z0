@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+Project: xk-dr-z0
+Team Member(s): E
+-->
+<html>
+<head>
+    <title>Terminal-Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/terminal/style.css" type="text/css">
+    <link rel="icon" href="assets/images/favicon.ico" sizes="16x16" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="assets/js/functions.js" type="text/javascript"></script> -->
+    <script src="assets/js/gui.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/page_functs.js" type="text/javascript"></script> -->
+    <script src="assets/js/main/script.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(evt => {
+            // let navBtns = document.getElementsByClassName("nav-btn");
+            // $("#nav-toggle").click(evt => {
+            //     let t = $("aside.toggle").attr("data-toggle");
+            //     if (t === "on") {
+            //         $("aside.toggle").attr("data-toggle", "off");
+            //     } else {
+            //         $("aside.toggle").attr("data-toggle", "on");
+            //     }
+
+            // });
+
+            // $("section").change(evt => {
+            //     let e = $(this);
+            //     let id = $(this).id;
+            //     toglesection(e);
+            //     let x = "button[data-link='" + id + "']";
+            //     if (e.attr('data-toggle') === "on") {
+            //         if (!$(x).hasClass("active")) {
+            //             $(x).addClass("active");
+            //         }
+            //     } else if (e.attr("data-toggle") == "off") {
+            //         if ($(x).hasClass("active")) {
+            //             $(x).removeClass('active');
+            //         }
+            //     }
+
+
+            // });
+
+            $(".sec-btn").each((num, e) => {
+                let id = e.getAttribute("data-link");
+                let section = "section#" + id;
+                $(e).on("click", toggleSection($(section), "data-toggle"));
+                // e.
+            });
+            // $(".sec-btn").on("click",function(evt){
+            //     console.log("Button Clicked"+$(evt));
+            //     console.log(evt.hasClass);
+
+            // });
+            // $("button.sec-btn").click(evt=>{
+            //     let e=$(this);
+            //     let link = e.attr("data-link");
+            //     let dest = "section#"+link;
+            //     let sec = $("section#"+link);
+            //     if (sec.attr("data-toggle")=="off"){
+            //         sec.attr("data-toggle","on");
+            //     }else{
+            //         sec.attr("data-toggle","off");
+            //     }
+            //    console.log(e.prop("tagName"));
+            // });
+        });
+    </script>
+</head>
+<body>
+
+
+    <div class="pop-up" hidden>
+        <div class="top"></div>
+        <div class="body"></div>
+        <div class="buttons"></div>
+    </div>
+    <aside class="toggle" data-toggle="on">
+
+        <nav id="sec-list">
+            <button class="sec-btn" data-link="test" value="test">Section 1</button>
+            <button class="sec-btn" data-link="test2" value="test2">Section 2</button>
+            <button class="sec-btn" data-link="test3" value="test3">Section 3</button>
+            <!-- <ul>
+                <li></li>
+            </ul> -->
+        </nav>
+    </aside>
+    <div class="window">
+        <div id="top-bar">
+            <div class="title">
+                <h1>XK-Z0-XD : XK-dR-Z0</h1>
+
+            </div>
+
+            <div class="nav">
+                <button class="nav-btn" id="nav-toggle"><img src="assets/images/menu_icon.png" width="16" height="16" /></button>
+            </div>
+        </div>
+        <!--Terminal -->
+        <div class="terminal">
+            <!-- <div class="border">
+
+            </div> -->
+            <div id="screen">
+                <div id="container">
+                    <main id="content">
+                        <!-- <div id="lines"></div>-->
+                        <section class="on" id="test" data-toggle="on">
+                            <h2>Test 1</h2>
+                            <p>This is Test 1 Section</p>
+                            <blockquote>
+                                <p>This is a blockquote.</p>
+                                <ul>
+                                    <li>List Item</li>
+                                    <li>List Item</li>
+                                    <li>List Item</li>
+                                    <li>List Item</li>
+                                    <li>List Item</li>
+                                </ul>
+                            </blockquote>
+                        </section>
+                        <section class="off" id="test2" data-toggle="off">
+                            <h2>Test 2</h2>
+                            <!-- <summary>Test 1</summary> -->
+                            <p>This is Test 2 Section</p>
+                        </section>
+                        <section class="off" id="test3" data-toggle="off">
+                            <h2>Test 3</h2>
+                            <!-- <summary>Test 3</summary> -->
+                            <p>This is Test 1 Section</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Column 1</th>
+                                        <th>Column 2</th>
+                                        <th>Column 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ABC</td>
+                                        <td>123</td>
+                                        <td>@#$</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ABC</td>
+                                        <td>123</td>
+                                        <td>@#$</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </main>
+</body>
+</html>

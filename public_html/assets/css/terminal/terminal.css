@@ -1,0 +1,136 @@
+/*
+
+Project: My Java Lib
+Team Member(s): Elena
+Date: For "...(...)" callee: Expected a method or function, but this has evaluated to a string (wrapper: f.t.SimpleScalar):
+==> date?string  [in template "file:///C:/Users/eVmPr/Documents/NetBeansProjects/xk-dr-z0/nbproject/licenseheader.txt" at line 7, column 25]
+
+----
+FTL stack trace ("~" means nesting-related):
+        - Failed at: ${date?string("mm/dd/yyyy")}  [in template "file:///C:/Users/eVmPr/Documents/NetBeansProjects/xk-dr-z0/nbproject/licenseheader.txt" at line 7, column 23]
+        - Reached through: #include "${project.licensePath}"  [in template "Templates/ClientSide/css.css" at line 4, column 1]
+----
+*/
+/* 
+    Created on : Dec 6, 2023, 3:31:32 PM
+    Author     : eVmPr
+*/
+/*
+fonts:
+Acer vga 8x8 plus
+IBM BIOS 
+vt323
+Rainbow100 r.800
+sigma RM 
+*/
+@charset "UTF-8";
+@import url('main.css');
+/*fonts*/
+
+/**/
+div.terminal {
+    width: calc(100% - var(--aside-width));
+    height: 500px;
+    border: 5px double var(--border-color);
+    /* font: 16px var(--text-font); */
+    font: 16px Rainbow100;
+    /* position: fixed; */
+    right: 0;
+}
+
+.terminal::after {
+    /* background: repeating-linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8) ); */
+    /* background: repeating-linear-gradient( rgba(#bbb, 0.25), rgba(#fff, 0.55) 10px, transparent 1px, transparent 2px ); */
+    background: repeating-linear-gradient(#e66465, #e66465 20px, #9198e5 20px, #9198e5 25px);
+}
+
+.terminal .border {
+    border: 5px solid #444;
+    width: 100%;
+    height: 100%;
+}
+
+.terminal #screen {
+    box-sizing: border-box;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    text-shadow: 0 0 2px rgb(116, 206, 116);
+    /*    background-image: radial-gradient(ellipse, #0039aa 0%, rgba(0,0,0,0.5)90% );
+*/
+}
+
+div#screen::before {
+    /* content: repeating-linear-gradient(rgba(255,255,255,0.5)50%,rgba(0,0,0,01)50% );; */
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* background-image: repeating-linear-gradient(to bottom rgba(255,255,255,01)50%,rgba(0,0,0,0.25)50% ); */
+    /* background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.15),rgba(255,255,255,0.15)5px,rgba(0,0,0,0.5)10px ); */
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 01) 50%,rgba(0, 0, 0, 0.25) 50%);
+    border: 2px solid white;
+    background-repeat: repeat-y;
+    background-size: 100%,8px;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background-position: 0; */
+
+    z-index: 4;
+}
+
+#x:after {
+    content: '';
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to bottom,rgba(18, 16, 16, 0.1) 50%,rgba(0, 0, 0, 0.25) 50%);
+    background-repeat: repeat-y;
+    background-size: 100% 8px;
+}
+
+.terminal #lines {
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    /* background: linear-gradient(to bottom, rgba(18,16,16,0.1)50%,rgba(0,0,0,0.35), 50%); */
+    /* background: repeating-linear-gradient(#e66465, # 20px, #9198e5 20px, #9198e5 25px); */
+    left: 0;
+    top: 0;
+}
+
+.terminal .scanline {
+}
+
+.screen-line {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    background-size: 100% 8px;
+    z-index: 2;
+    /* background: repeating-linear-gradient( 0deg, rgba(black, 0.15), rgba(black, 0.15) 1px, transparent 1px, transparent 2px ); */
+}
+
+.terminal .container {
+    /* border: 10px double --border-color; */
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#content {
+    /* margin: 5px; */
+    padding: 2.5px 10px;
+    width: 100%;
+    font: 18px Rainbow100;
+    overflow-y: auto;
+}

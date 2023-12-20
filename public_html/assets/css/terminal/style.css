@@ -1,0 +1,349 @@
+@font-face {
+    font-family: VT323;
+    src: url('https://unpkg.com/xk-toolbox@1.2.2/styles/fonts/VT323-Regular.ttf');
+}
+
+@font-face {
+    font-family: AcerVGA8x8;
+    src: url('../fonts/Web437_Acer_VGA_8x8.woff');
+}
+
+@font-face {
+    font-family: Rainbow100;
+    src: url('../fonts/WebPlus_Rainbow100_re_80.woff');
+}
+
+@font-face {
+    font-family: Nix8x8;
+    src: url('../fonts/Web437_Nix8810_M16.woff');
+}
+
+@font-face {
+    font-family: bitwise;
+    src: url('https://unpkg.com/xk-toolbox@1.2.2/styles/fonts/bitwise.ttf');
+}
+
+@font-face {
+    font-family: IBM_BIOS_2y;
+    src: url("../fonts/Web437_IBM_BIOS-2y.woff");
+}
+
+@font-face {
+    font-family: DOS_VT19;
+    src: url('../fonts/Web437_DOS-V_TWN19.woff');
+}
+
+@font-face {
+    font-family: 'Courier Prime';
+    src: url('../fonts/CourierPrime-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Code New Roman';
+    src: url('../fonts/code-new-roman.regular.otf');
+}
+
+/*Vars*/
+:root {
+    --main-color: rgb(255,255,255);
+    --main-bg: rgb(0,0,0);
+    --main-font: 'Courier New', "Lucinda Console", 'Monaco', monospace;
+    --red-bg: rgb(27, 3, 2);
+    --red-fg: rgb(192, 16, 10);
+    --green-bg: rgb(5, 50, 30);
+    --green-fg: rgb(91, 248, 112);
+    --blue-bg: rgb(66, 66, 231);
+    --blue-fg: rgb(165, 165, 255);
+    --grey-bg: rgb(114, 114, 114);
+    --caret: "█";
+    --before: ">";
+}
+
+.blue {
+    --bg-color: var(--blue-bg);
+    --color: var(--blue-fg);
+}
+/*reset style*/
+/* *:where(:not(html,iframe,canvas,img,svg,video,audio):not(svg *, symbol *)){
+    all:unset;
+    display: block;
+} */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* font: inherit; */
+    border: 0;
+    font-size: 14px;
+}
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
+
+html {
+    font-size: 12px;
+    background: var(--main-bg);
+    color: var(--main-color);
+    font: var(--main-font);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img, picture, video, canvas, svg {
+    display: bloock;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+}
+/* container styles*/
+body {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    line-height: 16px;
+}
+
+aside.toggle {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 400px;
+    margin: 0px 10px;
+    border-left: 2px;
+    background: var(--blue-bg);
+}
+
+.window {
+    display: block;
+    float: left;
+    position: absolute;
+    max-height: fit-content;
+    background-color: #222;
+    border: 5px solid #222;
+    margin-left: 10px;
+    box-shadow: 5px 5px 0 0 var(--grey-bg);
+}
+
+
+.terminal {
+    float: left;
+    width: 750px;
+    height: 500px;
+    background-color: var(--main-bg);
+    position: relative;
+}
+
+    .terminal #screen {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 33%,rgba(0, 0, 0, 0.25) 50%); */
+        /* background-image: linear-gradient(to bottom,rgba(50, 3, 2, 0.5) 10px ,
+    rgba(17, 50, 17, 0.5) 10px, rgba(66, 66, 231, 0.5)5px,transparent 2px ); */
+        /* background: repeating-linear-gradient(0deg,rgba(27, 3, 2, 01)25px,transparent 2px,
+    rgba(5, 50, 30, 01),transparent 2px, rgba(66, 66, 231, 01) 20px); */
+        /* background: repeating-linear-gradient(
+    0deg,    rgba(0,0,0, 0.15),
+    rgba(0,0,0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  ); */
+        /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 33%,rgba(0, 0, 0, 0.25) 50%); */
+        /* background: repeating-linear-gradient( 0deg, rgba(black, 0.15), rgba(black, 0.15) 1px, transparent 1px, transparent 2px ); */
+        /* background-repeat: repeat-y; */
+        /* background-size: 100% 8px; */
+        /* padding: 5px; */
+    }
+
+#screen::after {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: repeating-linear-gradient(0deg, rgba(50, 3, 2,0.5),rgb(5, 50, 30,0.25) 1px, rgba(66, 66, 231,0.1) 2px,transparent 5px);
+}
+
+#lines {
+    width: 500px;
+    height: 500px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    /* background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px ); */
+}
+
+
+#top-bar {
+    padding: 5px;
+}
+
+.terminal #screen::before {
+    content: "";
+    /* */
+}
+
+.terminal #screen::after {
+    content: "";
+    background: repeating-linear-gradient( 0deg, rgba(black, 0.15), rgba(black, 0.15) 1px, transparent 1px, transparent 2px );
+}
+
+div.terminal #screen #container {
+    width: 100%;
+    min-height: max-content;
+    height: 100%;
+    /*border: 5px solid #222;*/
+}
+
+#content {
+    padding: 5px;
+    font-family: Rainbow100, var(--main-font);
+}
+
+div.section {
+}
+
+section[data-toggle="off"] {
+    display: none;
+}
+
+section[data-toggle="on"] {
+    display: block;
+}
+/* Nav*/
+nav.sec-list {
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+    nav.sec-list button {
+        width: calc(100%-5px);
+    }
+
+.sec-list {
+}
+
+#nav-toggle {
+    float: right;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+
+/*forms*/
+button {
+    padding: 2px 10px;
+    background: rgba(0,0,0,0);
+    /* border:  */
+    color: rgba(0,255,255,1);
+}
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    button.sec-btn {
+        padding: 2px 10px;
+        margin: 2.5px;
+        background: rgba(0,0,0,0);
+        border: 1px solid var(--main-color);
+        color: rgba(0,255,255,1);
+        box-shadow: 5px 5px 0 0 var(--grey-bg);
+        font: 14px Nix8x8, monospace;
+        box-shadow: 5px 5px 0 0 var(--grey-bg);
+    }
+
+        button.sec-btn:hover {
+            background-color: #0ff;
+            color: #000;
+            border: 1px solid #000;
+        }
+
+.sect-btn:hover::before {
+    content: "> ";
+}
+
+button.sect-btn .active {
+    background-color: var(--blue-bg);
+    color: #000;
+    font-weight: bold;
+}
+
+button.sec-btn .active::before {
+    content: "> ";
+}
+/*text*/
+
+details {
+}
+
+summary {
+    font-size: inherit;
+}
+
+    summary::marker {
+        content: "$";
+    }
+
+    summary::before {
+        content: "[";
+    }
+
+    summary::after {
+        content: "]";
+    }
+
+    summary:hover {
+        background-color: var(--color);
+        color: var(--bg-color);
+        cursor: pointer;
+    }
+
+/*media query*/
+@media screen and (min-width: 480px) {
+    body {
+        width: 480px;
+    }
+
+    aside.toggle {
+        bottom: 0;
+        float: none;
+        position: fixed;
+        width: 150px;
+        z-index: 2;
+        margin: 35px 10px 0px 0px;
+    }
+
+        aside.toggle[data-toggle="on"] {
+            display: block;
+        }
+
+        aside.toggle[data-toggle="off"] {
+            display: none;
+        }
+
+    .window {
+        width: 100%;
+    }
+
+    div.terminal {
+        width: 100%;
+        max-width: stretch;
+    }
+}
